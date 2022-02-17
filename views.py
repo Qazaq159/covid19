@@ -1,8 +1,6 @@
-from flask import Flask, redirect, render_template
+from app import app
+from flask import redirect, render_template
 from test import Covid19
-
-app = Flask(__name__)
-
 
 @app.route("/")
 def mainpage():
@@ -22,7 +20,3 @@ def mainpage():
 @app.route('/<path:path>')
 def other(path):
     return redirect('/')
-
-
-if __name__ == "__main__":
-    app.run(debug=False)
